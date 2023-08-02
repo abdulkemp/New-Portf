@@ -7,6 +7,10 @@ const {
     Experience,
     Project,
     Testimonial
+    // Skill,
+    // Experience,
+    // Project,
+    // Testimonial
 } = require('../model');
 const skill = new Skill();
 const experience = new Experience();
