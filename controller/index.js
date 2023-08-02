@@ -14,7 +14,7 @@ const {
 } = require('../model');
 const skill = new Skill();
 const experience = new Experience();
-const project = new Project();
+const project = new Project()
 const testimonial = new Testimonial();
 
 
@@ -43,7 +43,7 @@ route.delete('/project/:id', (req, res) => {
 // EXPERIENCE ROUTES
 
 route.get('/experiences', (req, res) => {
-    experience.fetchExperience(req, res);
+    experience.fetchExperiences(req, res);
 });
 
 route.get('/experience/:id', (req, res) => {
@@ -65,7 +65,7 @@ route.delete('/experience/:id', (req, res) => {
 // SKILLS ROUTES
 
 route.get('/skills', (req, res) => {
-    skill.fetchSkill(req, res);
+    skill.fetchSkills(req, res);
 });
 
 route.get('/skill/:id', (req, res) => {
@@ -87,7 +87,7 @@ route.delete('/skill/:id', (req, res) => {
 // SKILLS ROUTES
 
 route.get('/testimonials', (req, res) => {
-    testimonial.fetchTestimonial(req, res);
+    testimonial.fetchTestimonials(req, res);
 });
 
 route.get('/testimonial/:id', (req, res) => {
