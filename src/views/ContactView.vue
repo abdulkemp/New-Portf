@@ -21,6 +21,7 @@
                   placeholder="First Name"
                   name="name"
                   required
+                  style="color: white;"
                 />
               </div>
               <div class="col-md-6">
@@ -34,6 +35,7 @@
                   placeholder="Last Name"
                   name="name"
                   required
+                  style="color: white;"
                 />
               </div>
               <div class="col-md-6">
@@ -47,6 +49,7 @@
                   name="number"
                   required
                   placeholder="000-000-0000"
+                  style="color: white;"
                 />
               </div>
               <div class="col-md-6">
@@ -57,6 +60,7 @@
                   id="validationDefault03"
                   name="name"
                   required
+                  style="color: white;"
                 />
               </div>
               <div class="col-md-56">
@@ -70,7 +74,7 @@
                   optional
                   
                 >
-                  <option selected disabled value="" class="opt">Choose...</option>
+                  <option selected disabled value="" class="opt" style="color: white;">Choose...</option>
                   <option>Eastern Cape</option>
                   <option>Free State</option>
                   <option>Gauteng</option>
@@ -91,6 +95,7 @@
                   id="validationDefault04"
                   name="text"
                   required
+                  style="color: white;"
                 >
                 </textarea>
               </div>
@@ -119,6 +124,8 @@ export default {};
   /* display: flex; */
   /* position: relative; */
   overflow-y: scroll;
+  /* background-color: rgba(128, 128, 128, 0.568); */
+  backdrop-filter: blur(7px);
 }
 
 .contact {
@@ -149,6 +156,7 @@ input{
     border-bottom: 2px solid #66fcf1;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    
 }
 
 input:hover{
