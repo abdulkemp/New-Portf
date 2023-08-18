@@ -2,23 +2,47 @@
   <div id="projects">
     <!-- <Navbar /> -->
     <div class="project">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aut ab hic!
-      Illum beatae minima voluptate quae asperiores, ipsum fugiat natus ad
-      aliquid quasi blanditiis facere quis laboriosam debitis quas.
+      <div class="row skill">
+        <div class="col-md-2 m-5" v-for="proj in projs" :key="proj.idProjects">
+          <div class="card skill-card">
+            <img :src="proj.projImage" alt="" />
+            <div class="card-body proj-body">
+              <h1>{{ proj.projName }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      projs: this.$store.state.projects,
+    };
+  },
+  created() {
+    this.fetchProjects();
+  },
+  methods: {
+    async fetchProjects() {
+      const res = await axios.get(
+        `https://new-portfolio-64oc.onrender.com/projects`
+      );
+      this.projs = res.data.results;
+      console.log(res);
+    },
+  },
+};
 </script>
 
 <style scoped>
 #projects {
   min-width: 100%;
   max-height: 100%;
-  /* display: flex; */
-  /* position: relative; */
   overflow-y: scroll;
 }
 

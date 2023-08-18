@@ -21,7 +21,7 @@
                   placeholder="First Name"
                   name="name"
                   required
-                  style="color: white;"
+                  style="color: white"
                 />
               </div>
               <div class="col-md-6">
@@ -35,7 +35,7 @@
                   placeholder="Last Name"
                   name="name"
                   required
-                  style="color: white;"
+                  style="color: white"
                 />
               </div>
               <div class="col-md-6">
@@ -49,7 +49,7 @@
                   name="number"
                   required
                   placeholder="000-000-0000"
-                  style="color: white;"
+                  style="color: white"
                 />
               </div>
               <div class="col-md-6">
@@ -60,7 +60,7 @@
                   id="validationDefault03"
                   name="name"
                   required
-                  style="color: white;"
+                  style="color: white"
                 />
               </div>
               <div class="col-md-56">
@@ -72,9 +72,16 @@
                   id="validationDefault04"
                   name="name"
                   optional
-                  
                 >
-                  <option selected disabled value="" class="opt" style="color: white;">Choose...</option>
+                  <option
+                    selected
+                    disabled
+                    value=""
+                    class="opt"
+                    style="color: white"
+                  >
+                    Choose...
+                  </option>
                   <option>Eastern Cape</option>
                   <option>Free State</option>
                   <option>Gauteng</option>
@@ -95,7 +102,7 @@
                   id="validationDefault04"
                   name="text"
                   required
-                  style="color: white;"
+                  style="color: white"
                 >
                 </textarea>
               </div>
@@ -108,7 +115,22 @@
           </div>
         </div>
       </div>
-      <div class="contact-right"></div>
+      <div class="contact-right">
+        <div class="right-sect">
+          <h1>Get In Touch With Me</h1>
+          <hr />
+          <p>Thank you for getting in touch, hope to hear from you soon.</p>
+          <ul>
+            <li><ion-icon name="location-outline"></ion-icon> Cape Town, Mitchells Plain, 7785</li>
+            <li><ion-icon name="call-outline"></ion-icon> 082 886 9476</li>
+            <li><ion-icon name="mail-outline"></ion-icon> aakemp786@gmail.com</li>
+          </ul>
+          <div class="links">
+          <button><a href="https://www.linkedin.com/in/abdul-azeez-kemp-3b468121a"><ion-icon name="logo-linkedin"></ion-icon></a></button>
+          <button><a href="https://github.com/abdulkemp"><ion-icon name="logo-github"></ion-icon></a></button>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -121,10 +143,7 @@ export default {};
 #contact {
   min-width: 100%;
   max-height: 100%;
-  /* display: flex; */
-  /* position: relative; */
   overflow-y: scroll;
-  /* background-color: rgba(128, 128, 128, 0.568); */
   backdrop-filter: blur(7px);
 }
 
@@ -137,58 +156,146 @@ export default {};
   height: 100vh;
 }
 
-.di {
+.contact-left {
   width: 50%;
+  height: 80vh;
+}
+.contact-right {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.com {
+  width: 80%;
+}
+
+.right-sect {
+  width: 60%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
+  flex-direction: column;
+}
+
+.right-sect h1{
+  font-size: 2rem;
+}
+.right-sect p{
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+
+ul{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+}
+
+ion-icon{
+  padding-right: 1rem;
+  padding-top: 5px;
+  font-size: 1.5rem;
+  color: #45a29e;
+}
+
+.links{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button ion-icon{
+  font-size: 3rem;
+  color: #45a29e;
+}
+ion-icon:hover{
+  transition: 0.5s;
+  transform: scale(1.2);
+  overflow: hidden;
+}
+.links button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+hr {
+  width: 50%;
+  background-color: #45a29e;
+  height: 0.5rem;
+}
+
+.di {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 label {
   color: #c5c6c7;
 }
 
-input{
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #66fcf1;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #66fcf1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-input:hover{
-    background-color: rgba(255, 255, 255, 0.268);
+input:hover {
+  background-color: rgba(255, 255, 255, 0.268);
 }
-.form-select:hover{
-    background-color: rgba(255, 255, 255, 0.268);
-}
-
-input::placeholder{
-    color: #c5c6c758;
+.form-select:hover {
+  background-color: rgba(255, 255, 255, 0.268);
 }
 
-.opt{
-    color: #c5c6c758;
+input::placeholder {
+  color: #c5c6c758;
 }
 
+.opt {
+  color: #c5c6c758;
+}
 
 .form-select {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #66fcf1;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #66fcf1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-.btn-primary{
-    background-color: transparent;
-    border-radius: 0;
-    border: 2px solid #66fcf1;
-    backdrop-filter: blur(12px);
+.btn-primary {
+  background-color: transparent;
+  border-radius: 0;
+  border: 2px solid #66fcf1;
+  backdrop-filter: blur(12px);
 }
+.btn-primary:hover {
+  transition: 0.5s;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 1.5);
+  transform: scale(1.2);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
 @media screen and (max-width: 650px) {
   .com {
     width: 15rem;
