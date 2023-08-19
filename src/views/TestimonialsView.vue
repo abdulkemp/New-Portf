@@ -1,61 +1,16 @@
 <template>
   <div id="testimonials">
     <!-- <Navbar /> -->
+    <div class="head-test">
+      <h1>Testimonials</h1>
+      <button>
+        <a href="#testie">
+          <ion-icon name="arrow-down-outline"></ion-icon>
+        </a>
+      </button>
+    </div>
     <div class="testing">
       <div id="testie">
-        <!-- <div class="row skill">
-        <div
-          class="col-md-2 m-5"
-          v-for="test in tests"
-          :key="test.idTestimonials"
-        >
-          <div class="card skill-card">
-            <img :src="test.testImage" alt="" />
-            <div class="card-body test-body">
-              <h1>{{ test.testName }}</h1>
-            </div>
-          </div>
-        </div>
-      </div> -->
-        <!-- <div
-        id="carouselExampleInterval"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div
-          class="carousel-inner"
-         
-        >
-          <div class="carousel-item active" data-bs-interval="10000"  v-for="test in tests"
-          :key="test.idTestimonials">
-            <div class="image">
-              <img :src="test.testImage" class="d-block w-100" alt="..." />
-            </div>
-            <div class="testie">
-              <h1>{{ test.testName }}</h1>
-              <p>{{ test.testMessage }}</p>
-            </div>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleInterval"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleInterval"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div> -->
         <section>
           <div class="test" v-for="test in tests" :key="test.idTestimonials">
             <div class="test-left">
@@ -73,20 +28,6 @@
             </div>
           </div>
         </section>
-        <!-- <div class="test" v-for="test in tests"
-          :key="test.idTestimonials">
-        <div class="test-left">
-          <img :src="test.testImage" alt="">
-        </div>
-        <div class="test-right">
-          <div class="name">
-            <h1>{{ test.testName }}</h1>
-          </div>
-          <div class="message">
-            {{ test.testMessage }}
-          </div>
-        </div>
-      </div> -->
       </div>
     </div>
   </div>
@@ -121,12 +62,46 @@ export default {
   max-height: 100%;
 }
 
-.testing{
+.testing {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.head-test {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+}
+
+.head-test h1 {
+  font-size: 4rem;
+}
+
+.head-test button {
+  width: 6rem;
+  height: 6rem;
+  font-size: 5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.head-test button:hover {
+  border: #45a29e solid 2px;
+  backdrop-filter: blur(12px);
+  transition: 0.5s;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 1.5);
+  transform: scale(0.9);
+}
+
+.head-test button a {
+  color: white;
 }
 
 #testie {
@@ -157,8 +132,6 @@ export default {
 #testie section .test {
   max-width: 100%;
 }
-
-
 
 .test {
   width: 70%;
