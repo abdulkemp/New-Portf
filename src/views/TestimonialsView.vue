@@ -9,7 +9,30 @@
         </a>
       </button>
     </div>
-    <div class="testing">
+    <div class="contai">
+      <div class="scroll-container">
+        <div
+          class="whole-card"
+          v-for="test in tests"
+          :key="test.idTestimonials"
+        >
+          <div class="whole-card-left">
+            <img :src="test.testImage" alt="" />
+          </div>
+          <div class="whole-card-right">
+            <div class="whole-name">
+              <h1>{{ test.testName }}</h1>
+            </div>
+            <div class="whole-message">
+              <p>
+                {{ test.testMessage }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="testing">
       <div id="testie">
         <section>
           <div class="test" v-for="test in tests" :key="test.idTestimonials">
@@ -29,7 +52,7 @@
           </div>
         </section>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -58,16 +81,90 @@ export default {
 
 <style scoped>
 #testimonials {
-  min-width: 100%;
+  min-width: 101.5%;
   max-height: 100%;
+  overflow-y: scroll;
+  /* height: 100vh; */
+  scroll-snap-align: start;
 }
 
-.testing {
-  width: 100%;
+.whole-name h1 {
+  text-align: start;
+}
+
+.whole-card-right {
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.whole-card-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: transparent #45a29d67 transparent #45a29d67;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 18rem;
+  height: 18rem;
+}
+.whole-card-left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.whole-card {
+  min-width: 70%;
+  height: 20rem;
+  border: #45a29e solid 3px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  backdrop-filter: blur(12px);
+}
+.contai {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-container {
+  width: 70%;
+  height: 30rem;
+  border: 2px solid red;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow-x: scroll;
+  gap: 3rem;
+  scrollbar-width: thin; /* For Firefox compatibility */
+  scrollbar-color: #333 #eee;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 100%; /* Width of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: red; /* Thumb color */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Customize the scrollbar track when hovered */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: red; /* Thumb color on hover */
 }
 
 .head-test {
@@ -108,7 +205,7 @@ export default {
   /* min-width: 100%; */
   height: 100%;
   color: #c5c6c7;
-  /* position: relative; */
+  position: relative;
   /* top: 0;
   left: 0; */
   width: 100%;
@@ -128,44 +225,5 @@ export default {
   overflow-x: scroll;
   gap: 5rem;
   /* border-right: rgba(0, 0, 0, 0.186) 3rem solid; */
-}
-#testie section .test {
-  max-width: 100%;
-}
-
-.test {
-  width: 70%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 2px solid red; */
-  gap: 3rem;
-  border-radius: 50px;
-  backdrop-filter: blur(12px);
-  border: #66fcf232 solid 3px;
-}
-
-.test-left {
-  border: 8px solid;
-  border-color: transparent #66fcf232 transparent #66fcf232;
-  border-radius: 50%;
-  padding: 0.5rem;
-  width: 40rem;
-  margin-left: 3rem;
-  /* height: 25rem; */
-}
-
-.test-left img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.test-right {
-  width: fit-content;
-  /* border: 2px solid yellow; */
-  margin-right: 3rem;
-  flex-wrap: wrap;
 }
 </style>

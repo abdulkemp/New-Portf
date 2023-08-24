@@ -1,40 +1,49 @@
 <template>
   <div id="projects">
-    <!-- <Navbar /> -->
-    <!-- <div class="project">
-      <div class="row skill">
-        <div class="col-md-2 m-5" v-for="proj in projs" :key="proj.idProjects">
-          <div class="card skill-card">
-            <img :src="proj.projImage" alt="" />
-            <div class="card-body proj-body">
+    <div class="proj-head">
+      <h1>Projects Of What I've Done</h1>
+      <button>
+        <a href="#bod">
+          <ion-icon name="arrow-down-outline"></ion-icon>
+        </a>
+      </button>
+    </div>
+    <div class="bod" id="bod">
+      <div class="bood row">
+        <div class="wrapper col" v-for="proj in projs" :key="proj.idProjects">
+          <div class="cards">
+            <div class="hover">
+              <!-- <div class="icon"> -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+              <!-- <p>Hover</p>        -->
+              <!-- </div> -->
+            </div>
+            <div class="imageProj">
+              <img :src="proj.projImage" alt="" />
+            </div>
+            <div class="info">
               <h1>{{ proj.projName }}</h1>
+              <p>{{ proj.projDesc }}</p>
+              <div class="buttons">
+                <a :href="proj.github" target="_blank">Github</a>
+                <a :href="proj.liveLink" target="_blank">Live Link</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div> -->
-    <div class="project">
-      <div class="conta row">
-        <div
-          class="car col-md-2 m-5"
-          v-for="proj in projs"
-          :key="proj.idProjects"
-        >
-          <h2>{{ proj.projName }}</h2>
-          <p>{{ proj.projDesc }}</p>
-          <button class="btt">{{ proj.github }}</button>
-          <button class="btt">{{ proj.liveLink }}</button>
-          <span>Hover Here</span>
-          <div class="pic"></div>
-          <button class="btto"></button>
-        </div>
-        <!-- <div class="car car2">
-        <h2>Yasuo</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <span>Hover Here</span>
-        <div class="pic"></div>
-        <button></button>
-      </div> -->
       </div>
     </div>
   </div>
@@ -65,136 +74,207 @@ export default {
 
 <style scoped>
 #projects {
-  min-width: 100%;
+  min-width: 101.5%;
   max-height: 100%;
+  /* display: flex; */
+  /* position: relative; */
   overflow-y: scroll;
   height: 100%;
+  scroll-snap-align: start;
 }
 
-.project {
-  padding: 1rem;
+.bod {
+  width: 100%;
+  height: 100vh;
+  margin-top: 5rem;
+}
+
+.bood{
+  width: 100%;
+  height: 100%;
+  /* display: ; */
+}
+
+.hover {
+  position: relative;
+  padding: 2rem;
+  min-width: 7rem;
+  height: fit-content;
+  bottom: 0;
+  left: 28%;
+  display: flex;
+  z-index: 1;
+  color: black;
+}
+
+.imageProj {
+  opacity: 0.7;
+}
+
+svg {
+  transform: translateX(0px);
+  animation: float 5s ease-in-out infinite;
+  transition: 0.5s;
+  min-width: 100px;
+  font-size: 15rem;
+  /* min-height: 7rem; */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+.cards:hover .hover {
+  display: none;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
 }
 
-.conta {
+.cards {
+  width: 400px;
+  height: 250px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+  /* border-radius: 15px; */
+}
+
+.cards:hover {
+  transform: translateY(20px);
+}
+
+.cards::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to bottom, #45a29dee, #45a29e);
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+  /* border-radius: 15px; */
+}
+
+.cards:hover::before {
+  opacity: 1;
+}
+
+.cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border-radius: 15px; */
+}
+
+.cards .info {
+  position: relative;
+  z-index: 3;
+  color: #1f2833;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  /* z-index: 3; */
+}
+
+.cards:hover .info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.proj-head {
+  width: 100%;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  backdrop-filter: blur(15px);
 }
 
-.conta .car {
-  position: relative;
-  width: 500px;
-  height: 230px;
-  padding: 15px;
-  background: linear-gradient(60deg, #151516 0%, #1d2229);
-  overflow: hidden;
-  margin-bottom: 15px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+.proj-head h1 {
+  font-size: 4rem;
 }
 
-.conta .car h2 {
-  z-index: 99;
-  position: absolute;
-  bottom: 25px;
-  right: 130px;
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.2s ease;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.conta .car p {
-  z-index: 99;
-  position: absolute;
-  bottom: 30px;
-  right: 130px;
-  width: 150px;
-  font-size: 12px;
-  opacity: 0;
-  text-align: right;
-  letter-spacing: 1px;
-  color: #fff;
-  transition: 0.2s ease;
-}
-.conta .car span {
-  z-index: 99;
-  position: absolute;
-  top: 60px;
-  right: 35px;
-  font-size: 12px;
-  writing-mode: vertical-lr;
-  opacity: 0.7;
-  text-align: right;
-  letter-spacing: 1px;
-  color: #fff;
-  transition: 0.2s ease;
-}
-
-.conta .car .pic {
-  z-index: 100;
-  width: 395px;
-  height: 200px;
-  /* background-image: url(https://i.postimg.cc/bJjvm4j5/Screenshot-2023-08-19-130527.png); */
-  /* background-size: cover; */
-  border-radius: 12px;
-  filter: grayscale(100%);
-  transition: 0.3s ease;
-}
-
-.conta .car .btto {
-  position: absolute;
-  bottom: 40px;
-  right: 30px;
-  height: 30px;
-  font-size: 12px;
-  background-color: #772a9b;
+.proj-head button {
+  width: 6rem;
+  height: 6rem;
+  font-size: 5rem;
+  background-color: transparent;
   border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  outline: none;
-  writing-mode: vertical-lr;
-  opacity: 1;
-  transition: 0.3s ease;
 }
 
-.conta .car:hover .btto {
-  transform: scale(16.5);
-  opacity: 0.5;
-}
-.conta .car:hover h2 {
-  bottom: 80px;
-  right: 50px;
-}
-.conta .car:hover p {
-  right: 60px;
-  opacity: 0.5;
-}
-.conta .car:hover span {
-  top: 80px;
-  opacity: 0;
-}
-.conta .car:hover .pic {
-  filter: grayscale(0);
-  width: 470px;
+.proj-head button:hover {
+  border: #45a29e solid 2px;
+  backdrop-filter: blur(12px);
+  transition: 0.5s;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 1.5);
+  transform: scale(0.9);
 }
 
-/* .conta .car2 .pic{
-  background-image: url(https://i.postimg.cc/cLmT1GFR/Screenshot-2023-08-19-130137.png);
-  transition: 0.3s ease;
+.proj-head button a {
+  color: white;
 }
 
-.conta .car2 button{
-  background-color: #26c3a1;
+.buttons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons a {
+  width: 5rem;
+  /* height: 2rem; */
+  height: 2.5rem;
+  background-color: transparent;
+  /* color: white; */
+  border: #66fcf1 solid 3px;
+  text-decoration: none;
+  color: #1f2833;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons a:hover {
+  transition: 0.5s;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 1.5);
+  transform: scale(1.1);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+/* .buttons button a {
+  
+  width: 5rem;
+  height: 2rem;
+  border: 2px solid red;
 } */
+
+.info p {
+  font-size: 17px;
+}
 </style>

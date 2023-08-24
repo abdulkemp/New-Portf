@@ -21,7 +21,7 @@
           <div class="collapse navbar-collapse"  id="navbarNav">
             <ul class="navbar-nav mb-2 mb-lg-0" >
               <li class="nav-item" >
-                <a href="#home" class="nav-link active">Home</a>
+                <a href="#" class="nav-link active">Home</a>
               </li>
               <li class="nav-item">
                 <a href="#about" class="nav-link active">About Me</a>

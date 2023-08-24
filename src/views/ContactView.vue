@@ -121,14 +121,27 @@
           <hr />
           <p>Thank you for getting in touch, hope to hear from you soon.</p>
           <ul>
-            <li><ion-icon name="location-outline"></ion-icon> Cape Town, Mitchells Plain, 7785</li>
+            <li>
+              <ion-icon name="location-outline"></ion-icon> Cape Town, Mitchells
+              Plain, 7785
+            </li>
             <li><ion-icon name="call-outline"></ion-icon> 082 886 9476</li>
-            <li><ion-icon name="mail-outline"></ion-icon> aakemp786@gmail.com</li>
+            <li>
+              <ion-icon name="mail-outline"></ion-icon> aakemp786@gmail.com
+            </li>
           </ul>
           <div class="links">
-          <button><a href="https://www.linkedin.com/in/abdul-azeez-kemp-3b468121a"><ion-icon name="logo-linkedin"></ion-icon></a></button>
-          <button><a href="https://github.com/abdulkemp"><ion-icon name="logo-github"></ion-icon></a></button>
-        </div>
+            <button>
+              <a href="https://www.linkedin.com/in/abdul-azeez-kemp-3b468121a"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+            </button>
+            <button>
+              <a href="https://github.com/abdulkemp"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -141,10 +154,11 @@ export default {};
 
 <style scoped>
 #contact {
-  min-width: 100%;
+  min-width: 101.5%;
   max-height: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   backdrop-filter: blur(7px);
+  scroll-snap-align: start;
 }
 
 .contact {
@@ -181,16 +195,16 @@ export default {};
   flex-direction: column;
 }
 
-.right-sect h1{
+.right-sect h1 {
   font-size: 2rem;
 }
-.right-sect p{
+.right-sect p {
   font-size: 1.5rem;
   padding-left: 2rem;
   padding-right: 1rem;
 }
 
-ul{
+.right-sect ul {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -198,34 +212,34 @@ ul{
   flex-direction: column;
 }
 
-ul li {
+.right-sect ul li {
   list-style: none;
 }
 
-ion-icon{
+ion-icon {
   padding-right: 1rem;
   padding-top: 5px;
   font-size: 1.5rem;
   color: #45a29e;
 }
 
-.links{
+.links {
   width: 100%;
   padding: 2rem;
   display: flex;
   gap: 1rem;
 }
 
-button ion-icon{
+.links button ion-icon {
   font-size: 3rem;
   color: #45a29e;
 }
-ion-icon:hover{
+ion-icon:hover {
   transition: 0.5s;
   transform: scale(1.2);
   overflow: hidden;
 }
-.links button{
+.links button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,7 +247,7 @@ ion-icon:hover{
   border: none;
 }
 
-hr {
+.right-sect hr {
   width: 50%;
   background-color: #45a29e;
   height: 0.5rem;

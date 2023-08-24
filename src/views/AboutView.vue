@@ -1,76 +1,82 @@
 <template>
   <div id="about">
-    <div class="about">
-      <!-- <Navbar /> -->
-      <div class="about-me">
-        <div class="text">
-          <h1>What you should know About Me</h1>
-          <button>
-            <a href="#me">
-              <ion-icon name="arrow-down-outline"></ion-icon>
-            </a>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="me">
-      <div class="headline">
-        <h2>Meet <span>Abdul-Azeez Kemp</span></h2>
-        <h1>Aspiring Full-Stack Web Developer</h1>
-      </div>
-      <h2 class="intro">
-        In the world of technology, I started an exciting journey into web
-        development. I loved creating amazing online experiences. What began as
-        curiosity turned into a strong passion. I learned to weave together code
-        and pixels, blending technology and creativity. My goal is to craft
-        captivating digital worlds.
-      </h2>
-      <hr />
-      <div class="content">
-        <div class="con-left">
-          <p>
-            I'm Abdul-Azeez Kemp, a 24-year-old proudly from the lively town of
-            Mitchells Plain in Cape Town.
-          </p>
-          <p>
-            Even though I started in art school, I've always been curious about
-            technology. So, I took a leap into the world of IT and web
-            development, aiming to carve out a tech-focused career.
-          </p>
-          <p>
-            When I'm not immersed in coding or designing, I'm all about creating
-            special memories with my close friends and beloved family. You'll
-            often find me in the midst of friendly games, enjoying exciting
-            sports, and diving into the world of new skills that extend beyond
-            the tech realm. Join me on this journey as I explore the blend of
-            creativity and technology, embracing a world full of exciting
-            possibilities
-          </p>
-        </div>
-        <div class="con-right">
-          <div class="image">
-            <img
-              src="https://i.postimg.cc/wTKrW4yg/Picsart-23-08-15-14-29-39-483.png"
-              alt=""
-              srcset=""
-            />
+    <section>
+      <div class="about">
+        <!-- <Navbar /> -->
+        <div class="about-me">
+          <div class="text">
+            <h1>What you should know About Me</h1>
+            <button>
+              <a href="#me">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+              </a>
+            </button>
           </div>
         </div>
       </div>
-      <div class="cv-resume">
-        <a
-          href="https://drive.google.com/uc?export=download&id=1SVob5NHWiDOly4V-t7H3BQnR-KjWRxTr"
-          download
-          ><button class="down">Download CV</button></a
-        >
+      <div id="me">
+        <div class="headline">
+          <h2>Meet <span>Abdul-Azeez Kemp</span></h2>
+          <h1>Aspiring Full-Stack Web Developer</h1>
+        </div>
+        <div class="intro">
+          <h2 class="int">
+            In the world of technology, I started an exciting journey into web
+            development. I loved creating amazing online experiences. What began
+            as curiosity turned into a strong passion. I learned to weave
+            together code and pixels, blending technology and creativity. My
+            goal is to craft captivating digital worlds.
+          </h2>
+        </div>
+        <hr />
+        <div class="content">
+          <div class="con-right">
+            <div class="image">
+              <img
+                src="https://i.postimg.cc/wTKrW4yg/Picsart-23-08-15-14-29-39-483.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+          <div class="con-left">
+            <div class="left-con">
+              <p>
+                I'm Abdul-Azeez Kemp, a 24-year-old proudly from the lively town
+                of Mitchells Plain in Cape Town.
+              </p>
+              <p>
+                Even though I started in art school, I've always been curious
+                about technology. So, I took a leap into the world of IT and web
+                development, aiming to carve out a tech-focused career.
+              </p>
+              <p>
+                When I'm not immersed in coding or designing, I'm all about
+                creating special memories with my close friends and beloved
+                family. You'll often find me in the midst of friendly games,
+                enjoying exciting sports, and diving into the world of new
+                skills that extend beyond the tech realm. Join me on this
+                journey as I explore the blend of creativity and technology,
+                embracing a world full of exciting possibilities
+              </p>
+            </div>
+            <div class="cv-resume">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1SVob5NHWiDOly4V-t7H3BQnR-KjWRxTr"
+                download
+                ><button class="down">Download CV</button></a
+              >
 
-        <a
-          href="https://drive.google.com/uc?export=download&id=1-M5E2EBWHGORtHpsey1Nl96Q7knGAsMA"
-          download
-          ><button class="down">Download Resume</button></a
-        >
+              <a
+                href="https://drive.google.com/uc?export=download&id=1-M5E2EBWHGORtHpsey1Nl96Q7knGAsMA"
+                download
+                ><button class="down">Download Resume</button></a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -80,12 +86,18 @@ export default {};
 
 <style scoped>
 #about {
-  min-width: 100%;
+  min-width: 101.5%;
   max-height: 100%;
   /* display: flex; */
   /* position: relative; */
+  height: 100vh;
   overflow-y: scroll;
+  scroll-snap-align: start;
 }
+/* 
+section{
+  scroll-snap-align: start;
+} */
 
 .about {
   backdrop-filter: blur(15px);
@@ -103,7 +115,7 @@ export default {};
   padding: 5rem;
 }
 
-h2 span {
+.headline h2 span {
   color: #45a29e;
   font-size: 2.6rem;
 }
@@ -156,8 +168,17 @@ h2 span {
 }
 
 .intro {
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.int {
   text-align: center;
   padding: 2rem;
+  font-size: 1.7rem;
+  width: 70%;
 }
 
 hr {
@@ -181,9 +202,9 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 70%;
   gap: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
 }
 
 .cv-resume button {
@@ -203,15 +224,20 @@ hr {
 }
 
 .con-left {
-  width: 30%;
-  text-align: center;
+  width: 50%;
+  text-align: left;
+}
+.left-con {
+  width: 70%;
+  height: fit-content;
+  /* text-align: left; */
 }
 
 .con-left p {
   font-size: 1.2rem;
 }
 .con-right {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,7 +254,7 @@ hr {
   height: 100%;
 }
 
-img {
+.image img {
   filter: drop-shadow(15px 15px 10px);
   color: black;
 }

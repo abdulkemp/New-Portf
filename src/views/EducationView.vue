@@ -12,6 +12,7 @@
     <div class="middle" id="middle">
       <div class="desc">
         <h1>My Journey</h1>
+        <hr />
         <p>
           I used to be a high school student who didn't understand much about
           IT. But over time, I became really interested in it and decided to
@@ -147,12 +148,13 @@ export default {
 
 <style scoped>
 #edu {
-  min-width: 100%;
+  min-width: 101.5%;
   max-height: 100%;
   /* display: flex; */
   /* position: relative; */
   overflow-y: scroll;
   height: 100%;
+  scroll-snap-align: start;
 }
 
 .edu {
@@ -208,9 +210,9 @@ export default {
 }
 
 .desc h1 {
-  text-align: center;
+  text-align: left;
   color: #45a29e;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   font-size: 3rem;
 }
 
@@ -225,6 +227,12 @@ export default {
   height: 300px;
   border-radius: 15px;
   overflow: hidden;
+}
+
+hr {
+  width: 20%;
+  background-color: #45a29e;
+  height: 0.5rem;
 }
 
 .middle {

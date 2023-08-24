@@ -1,8 +1,13 @@
 <template>
-  <div id="home">
-    <section>
-      <Navbar />
-      <div class="whole">
+  <div id="landing">
+    <Navbar />
+    <div
+      class="container"
+      data-0="transform:translateX(0%);"
+      data-1000="transform:translateX(-300%);"
+    >
+      <section id="1">
+        <div class="whole">
         <div class="right">
           <div class="inside">
             <div class="front">
@@ -27,12 +32,13 @@
           <img src="https://i.postimg.cc/J45jQ3hn/My-project-10.png" alt="" />
         </div>
       </div>
-    </section>
-    <About />
-    <Education />
-    <Projects />
-    <Testimonials />
-    <Contact />
+      </section>
+      <About />
+      <Education />
+      <Projects />
+      <Testimonials />
+      <Contact />
+    </div>
   </div>
 </template>
 
@@ -56,29 +62,47 @@ export default {
 </script>
 
 <style scoped>
-#home {
-  min-width: 100%;
+.container {
+    min-width: 101.5%;
   height: 100%;
   /* border: 2px solid black; */
-  color: #c5c6c7;
-
+  color: #d1e8e1;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  height: 100vh;
+  /* backdrop-filter: blur(1px); */
+}
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  width: 100vw;
+  min-width: 100%;
+  /* background-color: white; */
 }
 
-/* .home{
-  
+/* .container section{
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fffee1;
+    scroll-snap-align: start;
 } */
 
-#home section {
-  min-width: 100%;
-  height: 90vh;
-}
+
 #home section .whole {
   max-width: 100%;
+  
 }
 
 .whole {
@@ -120,19 +144,19 @@ export default {
   flex-direction: column;
 }
 
-span {
+.front span {
   color: #45a29e;
 }
 
-h1 {
+.front h1 {
   font-size: 4rem;
-  color: #66fcf1;
+  color: #45a29e;
 }
 
-h2 {
+.front h2 {
   font-size: 3rem;
 }
-h3 {
+.front h3 {
   font-size: 2rem;
 }
 .front {
@@ -145,14 +169,14 @@ h3 {
 
 .left {
   width: 40%;
-  height: 90vh;
+  height: 91.3vh;
   padding-right: 0.3rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .left img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .right {
   /* border: 2px solid red; */
